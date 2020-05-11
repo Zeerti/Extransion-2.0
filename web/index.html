@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Extransion</title>
+    
+</head>
+<body>
+    <nav>
+        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Playback</a>
+            <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Record</a>
+        </div>
+    </nav>
+
+
+        <div class="tab-content" id="nav-tabContent">
+
+            <!--                    -->
+            <!--   Begin Play Tab   -->
+            <!--                    -->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="jumbotron jumbotron-fluid ">
+                    <div class="container">
+                        <h1 class="display-4">Playback Recording</h1>
+                        <p class="lead">This section will allow you to playback a previous recording for BrinkPOS software</p>
+                        <hr class="my-4">
+                        <p>
+                            <br>
+                            1. Set the options as needed<br>
+                            2. Press the start button to begin playback<br>
+                            3. To finish or stop your recording, press <b>ESC</b> on your keyboard<br>
+                            4. <b>For detailed instructions see details below</b>
+                        </p>
+                       <a href="#playback-config"><button type="button" id="play-btn" class="btn btn-outline-primary btn-sm d-flex">Click to begin</button></a>
+                        
+                    </div>
+                </div>
+
+                <!-- Playback instructions -->
+                <div class="container pt-4 pb-4">
+                    <div class="row">
+                        <p class="h3 border-bottom pb-1" id="play-instructions">Detailed Instructions</p>
+                    </div>
+                    <div class="row">
+                        <ol>
+                            <li>Locate the register.exe and select it so the program can launch Brink automatically </li>
+                            <li>Set a delay between each action (Recommended minimum of 0.5 seconds)</li>
+                            <li>Set how many times you want it to repeat</li>
+                            <li>Need to stop it early? Press <span class="text-danger bold"><strong>ESC</strong></span> to stop immediately</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="jumbotron jumbotron-fluid pb-5 mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <p class="h3 border-bottom pb-1" id="recording-instructions">Configuration</p>
+                        </div>
+                        <div class="row flex-column justify-content-center" id="playback-config">
+                            <div class="input-group mb-2 mt-3">
+                                <div class="custom-file flex-row-reverse">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                    <label class="custom-file-label" for="inputGroupFile04">Select Register.exe file</label>
+                                </div>
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="Delay between each action in seconds" aria-label="Action Delay" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Action Delay</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="How many times do you want it to repeat?" aria-label="Action Delay" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Repeats</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row pt-3 flex-column">
+                            <p class="text-danger h5">You will need to have Brink closed before you can begin recording</p>
+                            <a href="#"><button type="button" id="play-btn" class="btn btn-outline-primary btn-lg d-flex mt-3">Begin Playback <i class="material-icons md-48 align-self-center pl-2">play_circle_outline</i></button></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Playback configuration -->
+
+            </div>
+
+
+            <!-- <div class="row">
+                <p class="text-danger h5">You will need to have Brink closed before you can begin recording</p>
+            </div> -->
+
+            <!--                    -->
+            <!--  Begin Record Tab  -->
+            <!--                    -->
+            <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="jumbotron jumbotron-fluid ">
+                    <div class="container">
+                        <h1 class="display-4">Record Actions</h1>
+                        <p class="lead">This section will allow you to record actions to later repeat for BrinkPOS software</p>
+                        <hr class="my-4">
+                        <p>
+                            <br>
+                            1. Click the record button below to start recording your actions.<br>
+                            2. This will only record mouse clicks<br>
+                            3. To finish or stop your recording, press <b>ESC</b> on your keyboard<br>
+                            4. <b>For detailed instructions see details below</b>
+                        </p>
+                        <a class="btn btn-outline-danger btn-lg d-flex" id="record-btn" href="#recording-instructions" role="button">Start Recording <i class="material-icons md-48 align-self-center pl-2">mic</i></a>
+                    </div>
+                </div>
+                
+                <!-- Detailed Instructions -->
+                <div class="container pt-4">
+                    <div class="row">
+                        <p class="h3 border-bottom pb-1" id="recording-instructions">Detailed Instructions</p>
+                    </div>
+                    <div class="row">
+                        <ol>
+                            <li>Locate the register.exe and select it so the program can launch Brink automatically </li>
+                            <li>Press the start button and wait to Brink to launch</li>
+                            <li>Once Brink is up and running proceed to do all the actions you want recorded</li>
+                            <li>Finished? Press <span class="text-danger bold"><strong>ESC</strong></span> to finish the recording</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Recording options -->
+                <div class="container pt-5">
+                    <div class="row">
+                        <p class="h3 border-bottom pb-1" id="recording-instructions">Configuration</p>
+                    </div>
+                    <div class="row">
+                        <p class="text-danger h5">You will need to have Brink closed before you can begin recording</p>
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <label class="custom-file-label" for="inputGroupFile04">Select Register.exe file</label>
+                                <input type="file" class="custom-file-input w-50" id="inputGroupFile04">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

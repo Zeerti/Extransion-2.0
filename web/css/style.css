@@ -1,0 +1,54 @@
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    padding-top: 15px;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+
+a {
+    text-decoration: none; 
+}
+
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;  
+}
+
+
+#play-btn {
+    max-width: 400px;
+}
+
+#record-btn {
+    max-width: 200px;
+}
+
+.nav-item {
+    width: 40%;
+    text-align: center;
+}
+
+/* .custom-file {
+    max-width: 45%;
+} */
+
+.input-group {
+    max-width: 45%;
+}
+
+.cloud-gradient {
+    background: #e9ecef;
+    background: linear-gradient(275deg, rgba(253,251,251,1) 0%, #e9ecef 100%);
+    padding-bottom: 100px
+}
