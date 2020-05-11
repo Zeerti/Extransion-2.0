@@ -35,8 +35,8 @@ def saveToDatabase(db, actions):
     db.close()
 
 # Moves existing db files to backup folder
-def deleteDatabase():
-    # TODO: Delete DB files
+def backupDatabase():
+    # TODO: Backup DB files
     
     # Directory to be created
     directory = 'databaseBackup'
@@ -69,4 +69,4 @@ def deleteDatabase():
     shutil.move(sourceFile2, destDir)
     shutil.move(sourceFile3, destDir)
 
-# deleteDatabase()
+# backupDatabase()
