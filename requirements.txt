@@ -1,3 +1,4 @@
 eel==0.12.2
 pyinstaller==3.6
 pywinauto==0.6.8
+pynput==1.6.8
