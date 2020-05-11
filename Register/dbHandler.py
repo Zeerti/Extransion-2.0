@@ -31,3 +31,7 @@ def createDatabase():
 def saveToDatabase(db, actions):
     db['actions'] = actions
     db.close()
+
+# Deletes existing db files
+def deleteDatabase():
+    # TODO: Delete DB files
