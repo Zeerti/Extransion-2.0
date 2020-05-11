@@ -39,10 +39,11 @@ def saveToDatabase(db, actions):
 def backupDatabase():
     # TODO: Backup DB files
     
-    from datetime import date
-
-    today = date.today()
     # Directory to be created
+    # import today's date for backup folder naming
+    from datetime import date
+    today = date.today()
+
     directory = ('DatabaseBackup'+today.strftime("-%b-%d-%Y"))
     
     # Parent Directory path 
@@ -50,27 +51,28 @@ def backupDatabase():
     
     # Path 
     path = os.path.join(parent_dir, directory) 
-    
-    # Create the directory 
-    try: 
-        os.mkdir(path) 
-        print("Directory '%s' created" %directory) 
-
-        # if directory / file that is to be created already exists then 'FileExistsError' will be raised by os.mkdir() method 
-        # Similarly, if the specified path is invalid 'FileNotFoundError' Error will be raised 
-
-    except OSError as error: 
-        print(error)
 
     # Define files to be moved
-    sourceFile1 = 'pickle.db.dat'
+    sourceFile1 = 'pickle.db.dir'
     sourceFile2 = 'pickle.db.bak'
-    sourceFile3 = 'pickle.db.dir'
-    destDir =  directory
+    sourceFile3 = 'pickle.db.dat'
 
-    # Move database files from the Extransion directory to newly created databaseBackup folder
-    shutil.move(sourceFile1, destDir)
-    shutil.move(sourceFile2, destDir)
-    shutil.move(sourceFile3, destDir)
+    from zipfile import ZipFile
+    # create a ZipFile object
+    with ZipFile('backupDB.zip', 'w') as zipObj:
+
+        #create complete filepath of file in directory
+        path = os.path.join(parent_dir, directory)
+
+        # Add file to zip
+        zipObj.write(sourceFile1)
+        zipObj.write(sourceFile2)
+        zipObj.write(sourceFile3)
+    
+    # Delete original db files from Extransion folder
+    os.remove('pickle.db.dir')
+    os.remove('pickle.db.bak')
+    os.remove('pickle.db.dat')
 
 backupDatabase()
+# createDatabase()
