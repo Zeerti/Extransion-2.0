@@ -67,7 +67,3 @@ class Recorder():
         self.keyboardListener.stop()
         
     
-rec = Recorder()
-rec.startListening()
-while True:
-    a = 7
