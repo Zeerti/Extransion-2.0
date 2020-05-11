@@ -2,6 +2,7 @@ import shelve
 import os
 import shutil
 
+
 # Returns the current db file AS A COPY
 # You will need to explicityly resave it with the saveToDatabase function
 def getDatabase():
@@ -38,8 +39,11 @@ def saveToDatabase(db, actions):
 def backupDatabase():
     # TODO: Backup DB files
     
+    from datetime import date
+
+    today = date.today()
     # Directory to be created
-    directory = 'databaseBackup'
+    directory = ('DatabaseBackup'+today.strftime("-%b-%d-%Y"))
     
     # Parent Directory path 
     parent_dir = cwd = os.getcwd()
@@ -69,4 +73,4 @@ def backupDatabase():
     shutil.move(sourceFile2, destDir)
     shutil.move(sourceFile3, destDir)
 
-# backupDatabase()
+backupDatabase()
