@@ -30,12 +30,13 @@ class Recorder():
     # Current design will force program to be restarted if listeners are stopped
     # need to add in a flag to have it just ignore the listener 
     def toggleListening(self, key):
-        if(not self.listenFlag){
+        if(not self.listenFlag):
+            pass
             # TODO: YELL THAT YOU ARE ABOUT TO RE-ENABLE RECORDING
-        }
-        if (key == Key.esc){
+        
+        if (key == keyboard.Key.esc):
             self.listenFlag = not self.listenFlag
-        }
+        
     
 rec = Recorder() 
 while True:
