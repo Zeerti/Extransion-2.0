@@ -6,6 +6,7 @@ class Recorder():
     def __init__(self):
         self.actions = []
         self.listenFlag = False
+        self.recordingFlag = False
 
         # Event Listeners config
         self.mouseListener = mouse.Listener(on_click=self.appendToActions)
@@ -33,11 +34,11 @@ class Recorder():
             }
 
             self.actions.append(tempDict)
-            return self.actions
  
     # Begins the event handler listening
     # Listens to keyboard and mouse events
     def startListening(self):
+        self.recordingFlag = True
         self.mouseListener.start()
         self.keyboardListener.start()
     
@@ -57,13 +58,21 @@ class Recorder():
         if (key == keyboard.Key.esc):
             print('Killing listening threads')
             self.closeListeningThreads() 
+            self.recordingFlag = False
  
     # Closes both event handler threads
     # listening to mouse and keyboard events
     # Once closed they cannot be just opened.
     # A new instance will need to be generated
     def closeListeningThreads(self):
+        self.recordingFlag = False
         self.mouseListener.stop()
         self.keyboardListener.stop()
+
+    def isRecording(self):
+        return self.recordingFlag
+    
+    def getActions(self):
+        return self.actions
         
     

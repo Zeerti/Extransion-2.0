@@ -1,6 +1,7 @@
 import shelve
 import os
 import shutil
+from datetime import date
 
 
 # Returns the current db file AS A COPY
@@ -18,14 +19,17 @@ def createDatabase():
     _db = shelve.open('pickle.db')
     _db['actions'] = [
         {
-            'x': '0',
-            'y': '0'
+            'x': '0', 
+            'y': '0',
+            'button' : 'Button.left'
         },
         {
             'x': '1',
-            'y': '1'
+            'y': '1',
+            'button' : 'Button.right'
         }
     ]
+    return 
     
 
 # Takes in an array of dictionarys
@@ -33,6 +37,7 @@ def createDatabase():
 # their values should ONLY be integers.
 def saveToDatabase(db, actions):
     db['actions'] = actions
+    print(f'Saved {actions} to database')
     db.close()
 
 # Moves existing db files to backup folder
@@ -41,7 +46,6 @@ def backupDatabase():
     
     # Directory to be created
     # import today's date for backup folder naming
-    from datetime import date
     today = date.today()
 
     directory = ('DatabaseBackup'+today.strftime("-%b-%d-%Y"))
@@ -74,5 +78,3 @@ def backupDatabase():
     os.remove('pickle.db.bak')
     os.remove('pickle.db.dat')
 
-backupDatabase()
-# createDatabase()
