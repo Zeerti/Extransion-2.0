@@ -1,5 +1,6 @@
 import dbHandler
 from recorder import Recorder
+from playback import Playback  
 import eel
 # import playback # Not created yet
 
@@ -8,9 +9,10 @@ import eel
 #  Recorder Assembler  #
 ########################
 @eel.expose
-def startRecording(): 
+def startRecording():
+        # TODO: Start Brink 
         print('Grabbing DB')
-        db = dbHandler.getDatabase()
+        db = dbHandler.getDatabase(True)
         isRecording = True
         print('Loading recording software')
         recorder = Recorder()
@@ -27,17 +29,17 @@ def startRecording():
                 dbHandler.saveToDatabase(db, actions) # Save recorded actions to the DB
                 
 
- 
-
- 
+  
 ########################
 #  Playback Assembler  #
 ########################
 @eel.expose
 def startPlayback():
+    playback = Playback()
     # TODO: Finish playback assembly
     # playback = Playback(delay,)
-    pass
+    playback.startPlayback('C:/Brink/Register.exe', 0.02, 5)
+        
 
 
 # dbHandler.getDatabase()
