@@ -70,12 +70,7 @@ class Playback():
                     if(self.abortFlag): # Ends playback if it was paused
                         return
                     pass
-                
-            # Pop action off from 
   
-pb = Playback()
-
-pb.startPlayback("C:\\Brink\\Pos\\Register.exe", 2, 5)
 
  
                           

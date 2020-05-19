@@ -37,8 +37,8 @@ def startRecording():
 def startPlayback():
     playback = Playback()
     # TODO: Finish playback assembly
-    # playback = Playback(delay,)
-    playback.startPlayback('C:/Brink/Register.exe', 0.02, 5)
+    # PATH needs to be linked with GUI
+    playback.startPlayback('C:\\Brink\\Pos\\Register.exe', 0.02, 5)
         
 
 
