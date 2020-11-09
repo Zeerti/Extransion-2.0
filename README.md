@@ -2,7 +2,7 @@
 Automating BrinkPOS for testing purposes
 
 ## Releases
-https://github.com/Zeerti/Extransion/releases
+https://github.com/Zeerti/Extransion-2.0/releases
 
 ## Requirements
 1. Windows 10
